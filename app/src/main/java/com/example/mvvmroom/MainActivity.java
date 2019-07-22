@@ -22,7 +22,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final int ADD_NOTE_REQUEST = 1;
-
+    // działa
     private final Context context = this;
 
     private NoteViewModel noteViewModel;
