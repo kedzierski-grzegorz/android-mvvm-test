@@ -21,7 +21,7 @@ public interface NoteDao {
     @Delete
     void delete(Note note);
 
-    @Query("SELECT * FROM note_table ORDER BY priority;")
+    @Query("SELECT * FROM note_table ORDER BY priority DESC;")
     LiveData<List<Note>> getAllNotes();
 
     @Query("DELETE FROM note_table;")
