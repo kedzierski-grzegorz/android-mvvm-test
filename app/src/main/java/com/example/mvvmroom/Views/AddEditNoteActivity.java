@@ -1,4 +1,4 @@
-package com.example.mvvmroom;
+package com.example.mvvmroom.Views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
+
+import com.example.mvvmroom.R;
 
 public class AddEditNoteActivity extends AppCompatActivity {
     public static final String EXTRA_ID = "com.example.mvvmroom.EXTRA_ID";

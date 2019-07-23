@@ -1,4 +1,4 @@
-package com.example.mvvmroom;
+package com.example.mvvmroom.Views;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +17,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.mvvmroom.Data.Note;
+import com.example.mvvmroom.ViewModels.NoteViewModel;
+import com.example.mvvmroom.R;
 
 import java.util.List;
 
