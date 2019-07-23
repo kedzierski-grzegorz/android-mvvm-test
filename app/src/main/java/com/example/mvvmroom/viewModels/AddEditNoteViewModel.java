@@ -1,49 +1,35 @@
 package com.example.mvvmroom.viewModels;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
-import androidx.databinding.Observable;
-import androidx.databinding.PropertyChangeRegistry;
-import androidx.databinding.library.baseAdapters.BR;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.mvvmroom.ui.utils.ObservableViewModel;
+public class AddEditNoteViewModel extends ViewModel {
 
-public class AddEditNoteViewModel extends ObservableViewModel {
-    private String title;
-    private String description;
-    private int priority = 1;
+    private MutableLiveData<String> title = new MutableLiveData<>();
+    private MutableLiveData<String> description = new MutableLiveData<>();
+    private MutableLiveData<Integer> priority = new MutableLiveData<>();
 
- 
-
-    @Bindable
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-        notifyPropertyChanged(BR.description);
-    }
-
-    @Bindable
-    public String getTitle() {
+    public MutableLiveData<String> getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(MutableLiveData<String> title) {
         this.title = title;
-        notifyPropertyChanged(BR.title);
     }
 
-    @Bindable
-    public int getPriority() {
+    public MutableLiveData<String> getDescription() {
+        return description;
+    }
+
+    public void setDescription(MutableLiveData<String> description) {
+        this.description = description;
+    }
+
+    public MutableLiveData<Integer> getPriority() {
         return priority;
     }
 
-    public void setPriority(int priority) {
+    public void setPriority(MutableLiveData<Integer> priority) {
         this.priority = priority;
-        notifyPropertyChanged(BR.priority);
     }
 }

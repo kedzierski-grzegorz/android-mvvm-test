@@ -36,6 +36,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
         AddEditNoteViewModel viewModel = ViewModelProviders.of(this).get(AddEditNoteViewModel.class);
 
         binding.setViewModel(viewModel);
+        binding.setLifecycleOwner(this);
 
         editTextTitle = findViewById(R.id.edit_text_title);
         editTextDescription = findViewById(R.id.edit_text_description);
