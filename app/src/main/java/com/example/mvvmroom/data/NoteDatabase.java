@@ -1,4 +1,4 @@
-package com.example.mvvmroom.Data;
+package com.example.mvvmroom.data;
 
 import android.content.Context;
 import android.os.AsyncTask;

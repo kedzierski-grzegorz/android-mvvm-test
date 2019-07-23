@@ -1,7 +1,9 @@
-package com.example.mvvmroom.Views;
+package com.example.mvvmroom.views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +15,8 @@ import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import com.example.mvvmroom.R;
+import com.example.mvvmroom.databinding.ActivityAddNoteBinding;
+import com.example.mvvmroom.viewModels.AddEditNoteViewModel;
 
 public class AddEditNoteActivity extends AppCompatActivity {
     public static final String EXTRA_ID = "com.example.mvvmroom.EXTRA_ID";
@@ -27,7 +31,11 @@ public class AddEditNoteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_note);
+        ActivityAddNoteBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_add_note);
+
+        AddEditNoteViewModel viewModel = ViewModelProviders.of(this).get(AddEditNoteViewModel.class);
+
+        binding.setViewModel(viewModel);
 
         editTextTitle = findViewById(R.id.edit_text_title);
         editTextDescription = findViewById(R.id.edit_text_description);
@@ -48,7 +56,6 @@ public class AddEditNoteActivity extends AppCompatActivity {
             setTitle("Add note");
         }
     }
-
 
     private void saveNote() {
         String title = editTextTitle.getText().toString();

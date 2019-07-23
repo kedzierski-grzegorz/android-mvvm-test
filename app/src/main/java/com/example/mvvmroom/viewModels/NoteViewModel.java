@@ -1,4 +1,4 @@
-package com.example.mvvmroom.ViewModels;
+package com.example.mvvmroom.viewModels;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.mvvmroom.Data.Note;
-import com.example.mvvmroom.Data.NoteRepository;
+import com.example.mvvmroom.data.Note;
+import com.example.mvvmroom.data.NoteRepository;
 
 import java.util.List;
 

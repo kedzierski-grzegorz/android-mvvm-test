@@ -1,4 +1,4 @@
-package com.example.mvvmroom.Views;
+package com.example.mvvmroom.views;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mvvmroom.Data.Note;
+import com.example.mvvmroom.data.Note;
 import com.example.mvvmroom.R;
 
 public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteHolder> {

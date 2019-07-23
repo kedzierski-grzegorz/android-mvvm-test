@@ -1,4 +1,4 @@
-package com.example.mvvmroom.Data;
+package com.example.mvvmroom.data;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
