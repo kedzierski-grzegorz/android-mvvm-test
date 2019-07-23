@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         noteViewModel.getAllNotes().observe(this, new Observer<List<Note>>() {
             @Override
             public void onChanged(List<Note> notes) {
-                adapter.setNotes(notes);
+                adapter.submitList(notes);
             }
         });
 
@@ -139,8 +139,13 @@ public class MainActivity extends AppCompatActivity {
                 noteViewModel.deleteAllNotes();
                 Toast.makeText(this, "All notes deleted", Toast.LENGTH_LONG)
                         .show();
-            default:
-                return super.onOptionsItemSelected(item);
+                break;
+            case R.id.add_100_notes:
+                noteViewModel.add100Notes();
+                Toast.makeText(this, "100 notes were added", Toast.LENGTH_LONG)
+                        .show();
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
 }
