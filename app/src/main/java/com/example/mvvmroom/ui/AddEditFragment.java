@@ -7,6 +7,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -20,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 
 import com.example.mvvmroom.R;
 import com.example.mvvmroom.data.Note;
@@ -27,17 +29,11 @@ import com.example.mvvmroom.databinding.FragmentAddEditBinding;
 import com.example.mvvmroom.viewModels.AddEditNoteViewModel;
 import com.example.mvvmroom.viewModels.NoteViewModel;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AddEditFragment extends Fragment {
     public static final String EXTRA_ID = "com.example.mvvmroom.EXTRA_ID";
     public static final String EXTRA_TITLE = "com.example.mvvmroom.EXTRA_TITLE";
     public static final String EXTRA_DESCRIPTION = "com.example.mvvmroom.EXTRA_DESCRIPTION";
     public static final String EXTRA_PRIORITY = "com.example.mvvmroom.EXTRA_PRIORITY";
-
-    private NumberPicker numberPickerPriority;
 
     private AddEditNoteViewModel viewModel;
 
@@ -62,11 +58,6 @@ public class AddEditFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        numberPickerPriority = view.findViewById(R.id.number_picker_priority);
-
-        numberPickerPriority.setMinValue(1);
-        numberPickerPriority.setMaxValue(10);
 
         viewModel.setId(getArguments().getInt(EXTRA_ID));
 
