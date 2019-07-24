@@ -2,14 +2,12 @@ package com.example.mvvmroom.ui;
 
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.BindingAdapter;
-import androidx.databinding.BindingMethod;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -24,13 +22,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mvvmroom.R;
 import com.example.mvvmroom.data.Note;
+import com.example.mvvmroom.databinding.FragmentMainBinding;
 import com.example.mvvmroom.viewModels.MainViewModel;
-import com.example.mvvmroom.viewModels.NoteViewModel;
 import com.example.mvvmroom.ui.utils.NoteAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -51,8 +48,15 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        FragmentMainBinding binding =
+                DataBindingUtil.inflate(inflater,R.layout.fragment_main,container,false);
+        binding.setViewmodel(viewModel);
+        binding.setOwner(this);
+        binding.setNoteAdapter(new NoteAdapter());
+
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_main, container, false);
+
+        return binding.getRoot();
     }
 
     @Override
@@ -66,18 +70,16 @@ public class MainFragment extends Fragment {
         btnAddNewNote.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_addEditFragment));
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView.setHasFixedSize(true);
 
         final NoteAdapter adapter = new NoteAdapter();
-        recyclerView.setAdapter(adapter);
+        /*recyclerView.setAdapter(adapter);
 
         viewModel.getAllNotes().observe(this, new Observer<List<Note>>() {
             @Override
             public void onChanged(List<Note> notes) {
                 adapter.submitList(notes);
             }
-        });
+        });*/
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {

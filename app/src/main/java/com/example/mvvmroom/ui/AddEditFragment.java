@@ -3,11 +3,9 @@ package com.example.mvvmroom.ui;
 
 import android.os.Bundle;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -19,15 +17,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.NumberPicker;
-import android.widget.TextView;
 
 import com.example.mvvmroom.R;
-import com.example.mvvmroom.data.Note;
 import com.example.mvvmroom.databinding.FragmentAddEditBinding;
 import com.example.mvvmroom.viewModels.AddEditNoteViewModel;
-import com.example.mvvmroom.viewModels.NoteViewModel;
 
 public class AddEditFragment extends Fragment {
     public static final String EXTRA_ID = "com.example.mvvmroom.EXTRA_ID";

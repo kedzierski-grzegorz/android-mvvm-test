@@ -25,7 +25,7 @@ public class AddEditNoteViewModel extends AndroidViewModel {
 
     public AddEditNoteViewModel(@NonNull Application application) {
         super(application);
-        //noteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
+
         noteRepository = new NoteRepository(application);
         priority.setValue(1);
     }
