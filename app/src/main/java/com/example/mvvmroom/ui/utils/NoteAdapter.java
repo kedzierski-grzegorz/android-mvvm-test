@@ -1,4 +1,4 @@
-package com.example.mvvmroom.views;
+package com.example.mvvmroom.ui.utils;
 
 import android.view.LayoutInflater;
 import android.view.View;
